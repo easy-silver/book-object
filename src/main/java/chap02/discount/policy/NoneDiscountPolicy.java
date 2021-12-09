@@ -6,10 +6,10 @@ import chap02.Screening;
 /**
  * 할인 정책 미적용
  */
-public class NoneDiscountPolicy extends DiscountPolicy {
+public class NoneDiscountPolicy implements DiscountPolicy {
 
     @Override
-    protected Money getDiscountAmount(Screening screening) {
+    public Money calculateDiscountAmount(Screening screening) {
         return Money.ZERO;
     }
 }

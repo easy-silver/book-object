@@ -7,7 +7,7 @@ import chap02.discount.condition.DiscountCondition;
 /**
  * 금액 할인 정책
  */
-public class AmountDiscountPolicy extends DiscountPolicy {
+public class AmountDiscountPolicy extends DefaultDiscountPolicy {
 
     //할인 요금
     private Money discountAmount;
