@@ -14,18 +14,7 @@ public class TicketSeller {
     }
 
     public void sellTo(Audience audience) {
-        //초대장 보유
-        if (audience.getBag().hasInvitation()) {
-            Ticket ticket = ticketOffice.getTicket();
-            audience.getBag().setTicket(ticket);
-
-        //티켓 구매
-        } else {
-            Ticket ticket = ticketOffice.getTicket();
-            audience.getBag().minusAmount(ticket.getFee());
-            ticketOffice.plusAmount(ticket.getFee());
-            audience.getBag().setTicket(ticket);
-        }
+        ticketOffice.plusAmount(audience.buy(ticketOffice.getTicket()));
     }
 
 }
