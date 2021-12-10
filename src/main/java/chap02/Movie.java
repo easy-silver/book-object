@@ -27,4 +27,9 @@ public class Movie {
         return fee.minus(discountPolicy.calculateDiscountAmount(screening));
     }
 
+    //할인 정책 변경(인터페이스로 지정했기 때문에 유연하게 다양한 구현체들로 변경 가능함
+    public void changeDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
+
 }
