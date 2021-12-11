@@ -1,7 +1,6 @@
 package chap04;
 
 import chap02.Money;
-import chap02.discount.condition.DiscountCondition;
 
 import java.time.Duration;
 import java.util.List;
