@@ -16,7 +16,10 @@ public class Movie {
     private List<DiscountCondition> discountConditions;
 
     private MovieType movieType;
+
+    //금액 할인 정책에 사용되는 데이터
     private Money discountAmount;
+    //비율 할인 정책에 사용되는 데이터
     private double discountPercent;
 
     public String getTitle() {
