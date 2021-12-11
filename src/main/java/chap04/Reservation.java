@@ -1,7 +1,5 @@
 package chap04;
 
-import chap02.Money;
-
 /**
  * 영화 예매 클래스
  */
