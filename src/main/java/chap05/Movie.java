@@ -8,14 +8,13 @@ import java.util.List;
 /**
  * 영화
  * 책임: '금액을 계산하라' 메시지에 응답할 수 있어야 한다.
- *
  */
 public class Movie {
 
     private String title;
     private Duration runningTime;
     private Money fee;
-    private List<DiscoutCondition> discountConditions;
+    private List<DiscountCondition> discountConditions;
 
     private MovieType movieType;
     private Money discountAmount;
