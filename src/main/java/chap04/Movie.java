@@ -20,22 +20,6 @@ public class Movie {
     //비율 할인 정책에 사용되는 데이터
     private double discountPercent;
 
-    public boolean isDiscountable(LocalDateTime whenScreened, int sequence) {
-        for (DiscountCondition condition : discountConditions) {
-            if (condition.getType() == DiscountConditionType.PERIOD) {
-                if (condition.isDiscountable(whenScreened.getDayOfWeek(), whenScreened.toLocalTime())) {
-                    return true;
-                }
-
-            } else {
-                if (condition.isDiscountable(sequence)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
     public Money calculateAmountDiscountedFee() {
         if (movieType != MovieType.AMOUNT_DISCOUNT) {
             throw new IllegalArgumentException();
