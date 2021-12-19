@@ -12,18 +12,18 @@ class NightlyDiscountPhoneTest {
 
     @Test
     void calculateFee() {
-        NightlyDiscountPhone phone = new NightlyDiscountPhone(Money.wons(2), Money.wons(5), Duration.ofSeconds(10));
+        NightlyDiscountPhone phone = new NightlyDiscountPhone(Money.wons(2), Money.wons(5), Duration.ofSeconds(10), 0);
 
         //일반 통화
         phone.call(new Call(LocalDateTime.of(2018, 1, 1, 12, 10, 0),
                             LocalDateTime.of(2018, 1, 1, 12, 11, 0)));
         Money regularFee = phone.calculateFee();
-        assertThat(regularFee.toString()).isEqualTo("30.0");
+        assertThat(regularFee.getAmount().intValue()).isEqualTo(30);
 
         phone.call(new Call(LocalDateTime.of(2018, 1, 1, 22, 0, 0),
                             LocalDateTime.of(2018, 1, 1, 22, 1, 0)));
         Money nightlyFee = phone.calculateFee();
-        assertThat(nightlyFee.toString()).isEqualTo("42.0");
+        assertThat(nightlyFee.getAmount().intValue()).isEqualTo(42);
     }
 
 }
