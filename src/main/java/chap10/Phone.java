@@ -12,15 +12,18 @@ import java.util.List;
  */
 public class Phone {
     //단위 요금
-    private Money amount;
+    private final Money amount;
     //단위 시간
-    private Duration seconds;
+    private final Duration seconds;
+    //세율
+    private final double taxRate;
     //전체 통화 목록
-    private List<Call> calls = new ArrayList<>();
+    private final List<Call> calls = new ArrayList<>();
 
-    public Phone(Money amount, Duration seconds) {
+    public Phone(Money amount, Duration seconds, double taxRate) {
         this.amount = amount;
         this.seconds = seconds;
+        this.taxRate = taxRate;
     }
 
     public void call(Call call) {
@@ -46,6 +49,6 @@ public class Phone {
             result = result.plus(amount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
         }
 
-        return result;
+        return result.plus(result.times(taxRate));
     }
 }
