@@ -8,7 +8,7 @@ import java.time.Duration;
 /**
  * 심야 할인 요금제를 계산
  */
-public class NightlyDiscountPhone extends AbstractPhone {
+public class NightlyDiscountPhone extends Phone {
     private static final int LATE_NIGHT_HOUR = 22;
 
     //심야 할인 요금
