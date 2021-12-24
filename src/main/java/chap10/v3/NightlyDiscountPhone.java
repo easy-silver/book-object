@@ -18,7 +18,8 @@ public class NightlyDiscountPhone extends Phone {
     //단위 시간(초)
     private final Duration seconds;
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
+    public NightlyDiscountPhone(double taxRate, Money nightlyAmount, Money regularAmount, Duration seconds) {
+        super(taxRate);
         this.nightlyAmount = nightlyAmount;
         this.regularAmount = regularAmount;
         this.seconds = seconds;

@@ -15,7 +15,8 @@ public class RegularPhone extends Phone {
     //단위 시간
     private final Duration seconds;
 
-    public RegularPhone(Money amount, Duration seconds) {
+    public RegularPhone(double taxRate, Money amount, Duration seconds) {
+        super(taxRate);
         this.amount = amount;
         this.seconds = seconds;
     }
