@@ -4,7 +4,7 @@ import chap02.Money;
 
 import java.time.Duration;
 
-public class NightDiscountPhone extends Phone {
+public class NightlyDiscountPhone extends Phone {
 
     private static final int LATE_NIGHT_HOUR = 22;
 
@@ -12,7 +12,7 @@ public class NightDiscountPhone extends Phone {
     private Money regularAmount;
     private Duration seconds;
 
-    public NightDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
+    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
         this.nightlyAmount = nightlyAmount;
         this.regularAmount = regularAmount;
         this.seconds = seconds;
