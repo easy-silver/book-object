@@ -15,8 +15,9 @@ public abstract class Phone {
         for (Call call : calls) {
             result = result.plus(calculateCallFee(call));
         }
-        return result;
+        return afterCalculated(result);
     }
 
     abstract protected Money calculateCallFee(Call call);
+    abstract protected Money afterCalculated(Money fee);
 }
