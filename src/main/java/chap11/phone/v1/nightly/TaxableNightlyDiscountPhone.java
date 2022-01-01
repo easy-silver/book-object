@@ -1,7 +1,6 @@
-package chap11.phone.tax;
+package chap11.phone.v1.nightly;
 
 import chap02.Money;
-import chap11.phone.NightlyDiscountPhone;
 
 import java.time.Duration;
 

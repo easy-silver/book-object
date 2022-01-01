@@ -1,7 +1,6 @@
-package chap11.phone.tax;
+package chap11.phone.v1.regular;
 
 import chap02.Money;
-import chap11.phone.RegularPhone;
 
 import java.time.Duration;
 

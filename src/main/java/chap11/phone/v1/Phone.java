@@ -1,4 +1,4 @@
-package chap11.phone;
+package chap11.phone.v1;
 
 import chap02.Money;
 
