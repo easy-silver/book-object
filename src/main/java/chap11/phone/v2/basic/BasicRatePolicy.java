@@ -1,6 +1,9 @@
-package chap11.phone.v2;
+package chap11.phone.v2.basic;
 
 import chap02.Money;
+import chap11.phone.v2.Call;
+import chap11.phone.v2.Phone;
+import chap11.phone.v2.RatePolicy;
 
 /**
  * 기본 정책 요금 계산 추상 클래스
