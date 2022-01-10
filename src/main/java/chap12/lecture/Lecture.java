@@ -26,7 +26,8 @@ public class Lecture {
     public double average() {
         return scores.stream()
                 .mapToInt(Integer::intValue)
-                .average().orElse(0);
+                .average()
+                .orElse(0);
     }
 
     public List<Integer> getScores() {

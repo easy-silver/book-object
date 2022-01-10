@@ -17,12 +17,12 @@ public class GradeLecture extends Lecture {
 
     @Override
     public String evaluate() {
-        return super.evaluate() + ", " + greadesStatistics();
+        return super.evaluate() + ", " + gradesStatistics();
     }
 
-    private String greadesStatistics() {
+    private String gradesStatistics() {
         return grades.stream()
-                .map(grade -> format(grade))
+                .map(this::format)
                 .collect(Collectors.joining(" "));
     }
 
@@ -40,5 +40,24 @@ public class GradeLecture extends Lecture {
     public List<Integer> getScores() {
         return super.getScores();
     }
+
+    //등급별 평균 성적 계산
+    public double average(String gradeName) {
+        return grades.stream()
+                .filter(each -> each.isName(gradeName))
+                .findFirst()
+                .map(this::gradeAverage)
+                .orElse(0d);
+    }
+
+    //파라미터로 전달받은 등급의 평균 계산
+    private double gradeAverage(Grade grade) {
+        return getScores().stream()
+                .filter(grade::include)
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0);
+    }
+
 
 }
