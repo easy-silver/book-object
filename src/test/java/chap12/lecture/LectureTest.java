@@ -17,4 +17,18 @@ class LectureTest {
         //then
         System.out.println("evaluation = " + evaluation);
     }
+
+    @Test
+    void stats() {
+        //given
+        Lecture lecture = new Lecture("객체지향 프로그래밍",
+                70,
+                Arrays.asList(81, 95, 75, 50, 45));
+
+        //when
+        String stats = lecture.stats();
+
+        //then
+        System.out.println("stats = " + stats);
+    }
 }

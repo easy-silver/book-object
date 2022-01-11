@@ -59,5 +59,8 @@ public class GradeLecture extends Lecture {
                 .orElse(0);
     }
 
-
+    @Override
+    public String getEvaluationMethod() {
+        return "Grade";
+    }
 }
